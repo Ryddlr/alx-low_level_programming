@@ -1,30 +1,28 @@
 #include "main.h"
-/**
- *is_prime_number - returns true if the number is prime
- *@n: the number to check
- *Return: true if the number is prime
- */
-int is_prime_number(int n)
-{
-		int start = n / 2;
 
-		if (n <= 1)
+/**
+ * vorprime -check for prime
+ * @n: input number param
+ * @v: to check if n can be divised.
+ * Return: 1 if prime, 0 if not else recurse
+ */
+int vorprime(int n, int v)
+{
+		if (v == 1)
+			return (1);
+		if (n % v == 0)
 			return (0);
-			return (is_prime(n, start));
+			return (vorprime(n, v - 1));
 }
 
 /**
- *is_prime - returns the 1 if n is prime
- *@n: number to be checked
- *@start: number to start checking from
- *Return: 1 if n is prime, 0 otherwise
+ * is_prime_number - checks if input int is prime
+ * @n: num param
+ * Return: return 1 if prime else 0
  */
-
-int is_prime(int n, int start)
+int is_prime_number(int n)
 {
-		if (start <= 1)
-			return (1);
-		else if (n % start == 0)
+		if (n < 3)
 			return (0);
-			return (is_prime(n, start - 1));
+			return (vorprime(n, n - 1));
 }
