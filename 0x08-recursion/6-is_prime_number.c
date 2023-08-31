@@ -12,7 +12,7 @@ int vorprime(int n, int v)
 			return (1);
 		if (n % v == 0)
 			return (0);
-			return (vorprime(n, v - 1));
+		return (vorprime(n, v - 1));
 }
 
 /**
@@ -24,5 +24,5 @@ int is_prime_number(int n)
 {
 		if (n < 3)
 			return (0);
-			return (vorprime(n, n - 1));
+		return (vorprime(n, n - 1));
 }
