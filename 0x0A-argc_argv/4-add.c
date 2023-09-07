@@ -28,12 +28,11 @@ int main(int argc, char *argv[])
 	while (argv[j][i] != '\0')
 	{
 	if (!isdigit(argv[j][i]))
-																{
+	{
 	printf("Error\n");
 	return (1);
-																}
-																i++;
-																}
+	}															i++;
+	}
 	summ += atoi(argv[j]);
 	j++;
 
